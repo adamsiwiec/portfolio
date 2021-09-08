@@ -93,22 +93,23 @@ const Footer = () => {
     <StyledFooter>
       <StyledSocialLinks>
         <ul>
-          {socialMedia &&
+          {/* {socialMedia &&
             socialMedia.map(({ name, url }, i) => (
               <li key={i}>
                 <a href={url} aria-label={name}>
                   <Icon name={name} />
                 </a>
               </li>
-            ))}
+            ))} */}
         </ul>
       </StyledSocialLinks>
 
       <StyledCredit tabindex="-1">
-        <a href="https://github.com/bchiang7/v4">
-          <div>Designed &amp; Built by Brittany Chiang</div>
-
-          {githubInfo.stars && githubInfo.forks && (
+        <div>
+          Built by Adam Siwiec &amp; template by
+          <a href="https://github.com/bchiang7/v4">Brittany Chiang </a>
+        </div>
+        {/* {githubInfo.stars && githubInfo.forks && (
             <div className="github-stats">
               <span>
                 <Icon name="Star" />
@@ -119,8 +120,7 @@ const Footer = () => {
                 <span>{githubInfo.forks.toLocaleString()}</span>
               </span>
             </div>
-          )}
-        </a>
+          )} */}
       </StyledCredit>
     </StyledFooter>
   );

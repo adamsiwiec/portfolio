@@ -2,12 +2,12 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Brittany Chiang',
+    title: 'Adam Siwiec',
     description:
-      'Brittany Chiang is a software engineer specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
+      'Adam Siwiec is a software engineer specializing in building artificial intelligence, blockchain, and cloud products.',
+    siteUrl: 'https://siwiec.us', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '@asiwiec',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,12 +15,18 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'siwiec.us',
+      },
+    },
     `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'BrittanyChiang',
-        short_name: 'BrittanyChiang',
+        name: 'AdamSiwiec',
+        short_name: 'AdamSiwiec',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,

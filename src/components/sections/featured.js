@@ -50,7 +50,7 @@ const StyledProject = styled.div`
           margin: 0 0 5px 10px;
         }
       }
-    }
+    }yarn st
     .project-links {
       justify-content: flex-end;
       margin-left: 0;
