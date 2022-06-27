@@ -4,7 +4,7 @@ title: 'Frontend Developer'
 company: 'Metaplug'
 location: 'Palo Alto, CA'
 range: 'Aug - Sept 2019'
-url: 'https://metaplug.io'
+url: 'https://muse.place'
 ---
 
 - Worked on developing frontend applications that enabled users to find "micro-influencers" on Instagram.
