@@ -157,19 +157,10 @@ const About = () => {
             </p>
 
             <p>
-              Currently, I am a sophomore at <a href="https://stanford.edu">Stanford University</a>{' '}
+              Currently, I am a senior at <a href="https://stanford.edu">Stanford University</a>{' '}
               majoring in Computer Science. I currently work as a software engineering intern at{' '}
               <a href="https://nvidia.com">NVIDIA</a> where I work on a team focused on developing a
               wide variety of interesting cloud services.
-            </p>
-
-            <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
             </p>
 
             <p>Here are a few technologies I’ve been working with recently:</p>

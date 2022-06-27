@@ -44,6 +44,7 @@ const StyledContactSection = styled.section`
   .rhap_container {
     margin-top: 30px;
     border-radius: 20px;
+    background-color: var(--white);
   }
 `;
 

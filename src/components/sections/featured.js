@@ -70,8 +70,8 @@ const StyledProject = styled.li`
           margin: 0 10px 5px 0;
         }
       }
-    }yarn st
-    .project-links {
+    }
+    yarn st .project-links {
       justify-content: flex-end;
       margin-left: 0;
       margin-right: -10px;
@@ -322,7 +322,6 @@ const Featured = () => {
               tech
               github
               external
-              cta
             }
             html
           }

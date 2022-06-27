@@ -3,7 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
-// import { email } from '@config';
+import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -63,16 +63,13 @@ const Hero = () => {
   const three = <h3 className="big-heading">I build things that don't touch the ground.</h3>;
   const four = (
     <p>
-      I'm a software engineer based in Rogers, AR specializing in building exceptional products and services that live in the cloud.
+      I'm a software engineer based in Rogers, AR specializing in building exceptional products and
+      services that live in the cloud.
     </p>
   );
   const five = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer">
-      Check out my course!
+    <a href={`mailto:${email}`} className="email-link">
+      Get In Touch
     </a>
   );
 
