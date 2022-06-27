@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
-import { socialMedia } from '@config';
+// import { socialMedia } from '@config';
 
 const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -77,7 +77,7 @@ const Footer = () => {
     if (process.env.NODE_ENV !== 'production') {
       return;
     }
-    fetch('https://api.github.com/repos/bchiang7/v4')
+    fetch('https://api.github.com/repos/adamsiwiec/hexagon')
       .then(response => response.json())
       .then(json => {
         const { stargazers_count, forks_count } = json;
@@ -109,18 +109,18 @@ const Footer = () => {
           Built by Adam Siwiec &amp; template by
           <a href="https://github.com/bchiang7/v4">Brittany Chiang </a>
         </div>
-        {/* {githubInfo.stars && githubInfo.forks && (
-            <div className="github-stats">
-              <span>
-                <Icon name="Star" />
-                <span>{githubInfo.stars.toLocaleString()}</span>
-              </span>
-              <span>
-                <Icon name="Fork" />
-                <span>{githubInfo.forks.toLocaleString()}</span>
-              </span>
-            </div>
-          )} */}
+        {githubInfo.stars && githubInfo.forks && (
+          <div className="github-stats">
+            <span>
+              <Icon name="Star" />
+              <span>{githubInfo.stars.toLocaleString()}</span>
+            </span>
+            <span>
+              <Icon name="Fork" />
+              <span>{githubInfo.forks.toLocaleString()}</span>
+            </span>
+          </div>
+        )}
       </StyledCredit>
     </StyledFooter>
   );

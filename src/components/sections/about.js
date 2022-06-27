@@ -132,7 +132,18 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', "k8s", 'Redis', 'Python', 'React', 'Node.js', 'Spring Boot', 'SQL', "Blockchain", 'AWS and Azure Services'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'k8s',
+    'Redis',
+    'Python',
+    'React',
+    'Node.js',
+    'Spring Boot',
+    'SQL',
+    'Blockchain',
+    'AWS and Azure Services',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -144,15 +155,19 @@ const About = () => {
             <p>Hello! I'm Adam, a software engineer based in Rogers, AR.</p>
 
             <p>
-              I enjoy creating applications, micro-services, websites, and anything else that you can fit in a cloud.</p>
-            <p>I love going on long bike rides through the mountains, enjoying quality time with friends, and turning my workstation into a weekend gaming battlestation.
+              I enjoy creating applications, micro-services, websites, and anything else that you
+              can fit in a cloud.
+            </p>
+            <p>
+              I love going on long bike rides through the mountains, enjoying quality time with
+              friends, and turning my workstation into a weekend gaming battlestation.
             </p>
 
             <p>
-              Currently, I am a sophomore at{' '}
-              <a href="https://stanford.edu">Stanford University</a> majoring in Computer Science. I
-              currently work as a software engineering intern at <a href="https://nvidia.com">NVIDIA</a> where I work on a team
-              focused on developing a wide variety of interesting cloud services.
+              Currently, I am a sophomore at <a href="https://stanford.edu">Stanford University</a>{' '}
+              majoring in Computer Science. I currently work as a software engineering intern at{' '}
+              <a href="https://nvidia.com">NVIDIA</a> where I work on a team focused on developing a
+              wide variety of interesting cloud services.
             </p>
 
             <p>Here are a few technologies I've been working with recently:</p>
