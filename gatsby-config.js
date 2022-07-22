@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Adam Siwiec | Software Engineer | Web Developer',
     description:
-      'Adam Siwiec is a software engineer specializing in building artificial intelligence, blockchain, and cloud products.',
+      'Adam Siwiec is a software engineer specializing in building artificial intelligence, blockchain, and cloud products. He studies computer science at Stanford University and works as a software engineer at Nvidia.',
     siteUrl: 'https://siwiec.us', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@asiwiec1',

@@ -322,6 +322,7 @@ const Featured = () => {
               tech
               github
               external
+              alt
             }
             html
           }
@@ -354,7 +355,7 @@ const Featured = () => {
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { external, title, tech, github, cover, cta, alt } = frontmatter;
             const image = getImage(cover);
 
             return (
@@ -402,7 +403,7 @@ const Featured = () => {
 
                 <div className="project-image">
                   <a href={external ? external : github ? github : '#'}>
-                    <GatsbyImage image={image} alt={title} className="img" />
+                    <GatsbyImage image={image} alt={alt} className="img" />
                   </a>
                 </div>
               </StyledProject>

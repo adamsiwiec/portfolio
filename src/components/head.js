@@ -25,13 +25,8 @@ const Head = ({ title, description, image }) => {
     `,
   );
 
-  const {
-    defaultTitle,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitterUsername,
-  } = site.siteMetadata;
+  const { defaultTitle, defaultDescription, siteUrl, defaultImage, twitterUsername } =
+    site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -60,6 +55,22 @@ const Head = ({ title, description, image }) => {
       <meta name="twitter:image" content={seo.image} />
 
       <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" />
+
+      <script type="application/ld+json">
+        {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://siwiec.us",
+      "name": "Adam Siwiec",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-479-644-2578",
+        "contactType": "Customer Support"
+      }
+    }
+  `}
+      </script>
     </Helmet>
   );
 };
