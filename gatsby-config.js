@@ -2,12 +2,12 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Adam Siwiec',
+    title: 'Adam Siwiec | Software Engineer | Web Developer',
     description:
       'Adam Siwiec is a software engineer specializing in building artificial intelligence, blockchain, and cloud products.',
     siteUrl: 'https://siwiec.us', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@asiwiec',
+    twitterUsername: '@asiwiec1',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
