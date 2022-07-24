@@ -34,6 +34,7 @@
   "dependencies": {
     "animejs": "^3.2.1",
     "gatsby": "^4.19.2",
+    "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-google-analytics": "^4.19.0",
     "gatsby-plugin-image": "^2.19.0",
     "gatsby-plugin-manifest": "^4.19.0",
@@ -48,6 +49,7 @@
     "gatsby-remark-images": "^6.19.0",
     "gatsby-remark-prismjs": "^6.19.0",
     "gatsby-source-filesystem": "^4.19.0",
+    "gatsby-source-ghost": "^5.0.0",
     "gatsby-transformer-remark": "^5.19.0",
     "gatsby-transformer-sharp": "^4.19.0",
     "husky": "^8.0.1",
