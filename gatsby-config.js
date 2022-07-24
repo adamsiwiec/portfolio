@@ -122,7 +122,12 @@ module.exports = {
       options: {
         host: 'https://siwiec.us',
         sitemap: 'https://siwiec.us/sitemap.xml',
-        policy: [{ userAgent: '*', disallow: ['/blog/p/', '/blog/email/', '/blog/ghost'] }],
+        policy: [
+          {
+            userAgent: '*',
+            disallow: ['/blog/p/', '/blog/email/', '/blog/ghost/', '/cdn-cgi/l/email-protection'],
+          },
+        ],
       },
     },
     {
