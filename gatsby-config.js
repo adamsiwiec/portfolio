@@ -106,7 +106,7 @@ module.exports = {
           // optional: add additional sitemaps, which are e. g. generated somewhere else, but need to be indexed for this domain
           {
             name: `blog`,
-            url: `/blog/sitemap.xml`,
+            url: `https://siwiec.us/blog/sitemap.xml`,
           },
         ],
       },
@@ -118,16 +118,17 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: 'gatsby-plugin-merge-robots',
       options: {
         host: 'https://siwiec.us',
         sitemap: 'https://siwiec.us/sitemap.xml',
         policy: [
           {
             userAgent: '*',
-            disallow: ['/blog/p/', '/blog/email/', '/blog/ghost/', '/cdn-cgi/l/email-protection'],
+            disallow: ['/cdn-cgi/l/email-protection'],
           },
         ],
+        external: ['https://siwiec.us/blog/robots.txt'],
       },
     },
     {
