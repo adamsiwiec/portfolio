@@ -25,11 +25,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-advanced-sitemap`,
+      resolve: `gatsby-plugin-complex-sitemap-tree`,
       options: {
         // 1 query for each data type
         query: `
           {
+            allSitePage {
+              edges {
+                  node {
+                      id
+                      slug: path
+                      url: path
+                  }
+              }
+          }
               allGhostPost {
                   edges {
                       node {
@@ -70,45 +79,54 @@ module.exports = {
               }
           }`,
         // The filepath and name to Index Sitemap. Defaults to '/sitemap.xml'.
-        output: '/sitemap.xml',
-        mapping: {
-          // Each data type can be mapped to a predefined sitemap
-          // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
-          // The default sitemap - if none is passed - will be pages
-          allGhostPost: {
-            sitemap: `posts`,
-            // Add a query level prefix to slugs, Don't get confused with global path prefix from Gatsby
-            // This will add a prefix to this particular sitemap only
-            prefix: 'blog/',
-            // Custom Serializer
-          },
-          allGhostTag: {
-            sitemap: `tags`,
-          },
-          allGhostAuthor: {
-            sitemap: `authors`,
-          },
-          allGhostPage: {
-            sitemap: `pages`,
-          },
+        sitemapTree: {
+          fileName: 'sitemap.xml',
+          children: [
+            {
+              fileName: 'gatsby-pages.xml',
+              queryName: 'allSitePage',
+              children: [
+                {
+                  fileName: 'sitemap-manual.xml',
+                  children: [],
+                },
+              ],
+              serializer: edge => ({ loc: edge.slug }),
+              filterPages: edge => {
+                const substrings = [
+                  `/dev-404-page`,
+                  `/404`,
+                  `/404.html`,
+                  `/offline-plugin-app-shell-fallback`,
+                  `/my-excluded-page`,
+                ];
+                return !substrings.some(v => edge.slug.includes(v));
+              },
+            },
+            {
+              fileName: 'sitemap-posts.xml',
+              queryName: 'allGhostPost',
+              // Custom logic to change final sitemap.
+              serializer: edge => ({ loc: `blog/${edge.slug}` }),
+            },
+            {
+              fileName: 'sitemap-tags.xml',
+              queryName: 'allGhostTag',
+              serializer: edge => ({ loc: `blog/${edge.slug}` }),
+            },
+            {
+              fileName: 'sitemap-authors.xml',
+              queryName: 'allGhostAuthor',
+              serializer: edge => ({ loc: `blog/author/${edge.slug}` }),
+            },
+            {
+              fileName: 'sitemap-pages.xml',
+              queryName: 'allGhostPage',
+              serializer: edge => ({ loc: `blog/${edge.slug}` }),
+            },
+          ],
         },
-        exclude: [
-          `/dev-404-page`,
-          `/404`,
-          `/404.html`,
-          `/offline-plugin-app-shell-fallback`,
-          `/my-excluded-page`,
-          /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
-        ],
         createLinkInHead: true, // optional: create a link in the `<head>` of your site
-        addUncaughtPages: true, // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
-        // additionalSitemaps: [
-        //   // optional: add additional sitemaps, which are e. g. generated somewhere else, but need to be indexed for this domain
-        //   {
-        //     name: `blog`,
-        //     url: `https://siwiec.us/blog/sitemap.xml`,
-        //   },
-        // ],
       },
     },
     {
