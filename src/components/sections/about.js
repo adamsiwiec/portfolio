@@ -179,7 +179,7 @@ const About = () => {
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Headshot"
+              alt="Adam Siwiec and his dog, Atlas, walking through Rogers on a fall afternoon"
             />
           </div>
         </StyledPic>

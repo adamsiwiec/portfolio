@@ -1,13 +1,14 @@
 const config = require('./src/config');
 
+const ghostapikey = process.env.GHOST_KEY;
 module.exports = {
   siteMetadata: {
-    title: 'Adam Siwiec',
+    title: 'Adam Siwiec | Software Engineer | Web Developer',
     description:
-      'Adam Siwiec is a software engineer specializing in building artificial intelligence, blockchain, and cloud products.',
+      'Adam Siwiec is a software engineer specializing in building artificial intelligence, blockchain, and cloud products. He studies computer science at Stanford University and works as a software engineer at Nvidia.',
     siteUrl: 'https://siwiec.us', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@asiwiec',
+    twitterUsername: '@asiwiec1',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -15,14 +16,126 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://blog.siwiec.us/blog`,
+        contentApiKey: ghostapikey,
+        version: `v5.0`, // Ghost API version, optional, defaults to "v5.0".
+        // Pass in "v4.0" if your Ghost install is not on 5.0 yet!!!
+      },
+    },
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        // 1 query for each data type
+        query: `
+          {
+              allGhostPost {
+                  edges {
+                      node {
+                          id
+                          slug
+                          updated_at
+                          feature_image
+                      }
+                  }
+              }
+              allGhostPage {
+                  edges {
+                      node {
+                          id
+                          slug
+                          updated_at
+                          feature_image
+                      }
+                  }
+              }
+              allGhostTag {
+                  edges {
+                      node {
+                          id
+                          slug
+                          feature_image
+                      }
+                  }
+              }
+              allGhostAuthor {
+                  edges {
+                      node {
+                          id
+                          slug
+                          profile_image
+                      }
+                  }
+              }
+          }`,
+        // The filepath and name to Index Sitemap. Defaults to '/sitemap.xml'.
+        output: '/sitemap.xml',
+        mapping: {
+          // Each data type can be mapped to a predefined sitemap
+          // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
+          // The default sitemap - if none is passed - will be pages
+          // allGhostPost: {
+          //   sitemap: `posts`,
+          //   // Add a query level prefix to slugs, Don't get confused with global path prefix from Gatsby
+          //   // This will add a prefix to this particular sitemap only
+          //   prefix: 'blog/',
+          //   // Custom Serializer
+          // },
+          // allGhostTag: {
+          //   sitemap: `tags`,
+          // },
+          // allGhostAuthor: {
+          //   sitemap: `authors`,
+          // },
+          // allGhostPage: {
+          //   sitemap: `pages`,
+          // },
+        },
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+          `/my-excluded-page`,
+          /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
+        ],
+        createLinkInHead: true, // optional: create a link in the `<head>` of your site
+        addUncaughtPages: true, // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
+        additionalSitemaps: [
+          // optional: add additional sitemaps, which are e. g. generated somewhere else, but need to be indexed for this domain
+          {
+            name: `blog`,
+            url: `https://siwiec.us/blog/sitemap.xml`,
+          },
+          {
+            name: `manual`,
+            url: `https://siwiec.us/sitemap-manual.xml`,
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: 'siwiec.us',
       },
     },
-    `gatsby-plugin-robots-txt`,
+    {
+      resolve: 'gatsby-plugin-merge-robots',
+      options: {
+        host: 'https://siwiec.us',
+        sitemap: 'https://siwiec.us/sitemap.xml',
+        policy: [
+          {
+            userAgent: '*',
+            disallow: ['/cdn-cgi/l/email-protection'],
+          },
+        ],
+        external: ['https://siwiec.us/blog/robots.txt'],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

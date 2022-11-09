@@ -12,7 +12,7 @@ module.exports = {
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/asiwiec',
+      url: 'https://twitter.com/asiwiec1',
     },
     {
       name: 'Linkedin',
@@ -26,8 +26,8 @@ module.exports = {
       url: '/#about',
     },
     {
-      name: 'Experience',
-      url: '/#jobs',
+      name: 'Blog',
+      url: '/blog',
     },
     {
       name: 'Projects',
