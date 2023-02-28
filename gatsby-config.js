@@ -117,12 +117,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-s3`,
-      options: {
-        bucketName: 'siwiec.us',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-merge-robots',
       options: {
         host: 'https://siwiec.us',
