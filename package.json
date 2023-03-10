@@ -57,7 +57,6 @@
     "gatsby-source-ghost": "^5.0.2",
     "gatsby-transformer-remark": "^6.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
-    "husky": "^8.0.3",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
     "prop-types": "^15.8.1",
@@ -77,6 +76,7 @@
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^3.7.0",
     "gatsby-remark-code-titles": "^1.1.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.2"
   },
   "packageManager": "yarn@3.4.1"

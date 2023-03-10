@@ -69,8 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-transition-group", "virtual:9dfc6c979ba49de7512e43e4334bf460846969fedae49cc2fa5792e70f1fbb017a92210a03a060708efb852782f5cc534092db83c2c118f1663a93677c1e8444#npm:4.4.5"],\
             ["scrollreveal", "npm:4.0.9"],\
             ["sharp", "npm:0.31.3"],\
-            ["styled-components", "virtual:9dfc6c979ba49de7512e43e4334bf460846969fedae49cc2fa5792e70f1fbb017a92210a03a060708efb852782f5cc534092db83c2c118f1663a93677c1e8444#npm:5.3.8"],\
-            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"]\
+            ["styled-components", "virtual:9dfc6c979ba49de7512e43e4334bf460846969fedae49cc2fa5792e70f1fbb017a92210a03a060708efb852782f5cc534092db83c2c118f1663a93677c1e8444#npm:5.3.8"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -20757,15 +20756,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["typescript", [\
-        ["patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-72dc6f164f-ab417a2f39.zip/node_modules/typescript/",\
-          "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["ua-parser-js", [\
         ["npm:0.7.33", {\
           "packageLocation": "./.yarn/cache/ua-parser-js-npm-0.7.33-4d3f482ab6-1510e9ec26.zip/node_modules/ua-parser-js/",\
@@ -21273,8 +21263,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-transition-group", "virtual:9dfc6c979ba49de7512e43e4334bf460846969fedae49cc2fa5792e70f1fbb017a92210a03a060708efb852782f5cc534092db83c2c118f1663a93677c1e8444#npm:4.4.5"],\
             ["scrollreveal", "npm:4.0.9"],\
             ["sharp", "npm:0.31.3"],\
-            ["styled-components", "virtual:9dfc6c979ba49de7512e43e4334bf460846969fedae49cc2fa5792e70f1fbb017a92210a03a060708efb852782f5cc534092db83c2c118f1663a93677c1e8444#npm:5.3.8"],\
-            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"]\
+            ["styled-components", "virtual:9dfc6c979ba49de7512e43e4334bf460846969fedae49cc2fa5792e70f1fbb017a92210a03a060708efb852782f5cc534092db83c2c118f1663a93677c1e8444#npm:5.3.8"]\
           ],\
           "linkType": "SOFT"\
         }]\
