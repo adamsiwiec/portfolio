@@ -27,11 +27,11 @@ module.exports = {
     },
     {
       name: 'Blog',
-      url: '/blog',
+      url: '/blog/',
     },
     {
-      name: 'Projects',
-      url: '/#projects',
+      name: 'Project Archive',
+      url: '/archive',
     },
     {
       name: 'Contact',
